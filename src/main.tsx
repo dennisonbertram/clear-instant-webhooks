@@ -31,6 +31,16 @@ import './styles.css';
 
 const clerkKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY as string | undefined;
 
+export function formatTraceTime(timestamp: string) {
+  const parsed = new Date(timestamp);
+
+  if (Number.isNaN(parsed.getTime())) {
+    return timestamp;
+  }
+
+  return parsed.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
 export function AppShell() {
   return clerkKey ? (
     <ClerkProvider publishableKey={clerkKey}>
@@ -360,7 +370,7 @@ function ProductDashboard({
                 <strong>{event.name}</strong>
                 <p>{'message' in event ? event.message : event.detail}</p>
               </div>
-              <small>{new Date(event.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</small>
+              <small>{formatTraceTime(event.timestamp)}</small>
             </div>
           ))}
         </section>
