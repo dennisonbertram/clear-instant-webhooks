@@ -1,4 +1,5 @@
 import { ClerkProvider, Show, SignInButton, UserButton } from '@clerk/react';
+import { Agentation } from 'agentation';
 import { StrictMode, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import {
@@ -67,6 +68,15 @@ export function AppShell() {
     </ClerkProvider>
   ) : (
     <App demoAuth />
+  );
+}
+
+function RootApp() {
+  return (
+    <>
+      <AppShell />
+      {import.meta.env.DEV && <Agentation />}
+    </>
   );
 }
 
@@ -461,7 +471,7 @@ if (root) {
   globalRoot.__clearRoot ??= createRoot(root);
   globalRoot.__clearRoot.render(
     <StrictMode>
-      <AppShell />
+      <RootApp />
     </StrictMode>,
   );
 }
