@@ -30,6 +30,25 @@ import { readEvents, recordEvent, type TelemetryEvent } from './lib/observabilit
 import './styles.css';
 
 const clerkKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY as string | undefined;
+const clerkAppearance = {
+  variables: {
+    colorPrimary: '#1d4ed8',
+    colorBackground: '#ffffff',
+    colorText: '#18181b',
+    colorTextSecondary: '#71717a',
+    colorInputBackground: '#ffffff',
+    colorInputText: '#18181b',
+    borderRadius: '6px',
+    fontFamily: 'Geist, Inter, ui-sans-serif, system-ui, sans-serif',
+  },
+  elements: {
+    card: 'clear-clerk-card',
+    formButtonPrimary: 'clear-clerk-primary',
+    socialButtonsBlockButton: 'clear-clerk-button',
+    formFieldInput: 'clear-clerk-input',
+    footerActionLink: 'clear-clerk-link',
+  },
+};
 
 export function formatTraceTime(timestamp: string) {
   const parsed = new Date(timestamp);
@@ -43,7 +62,7 @@ export function formatTraceTime(timestamp: string) {
 
 export function AppShell() {
   return clerkKey ? (
-    <ClerkProvider publishableKey={clerkKey}>
+    <ClerkProvider publishableKey={clerkKey} appearance={clerkAppearance}>
       <App />
     </ClerkProvider>
   ) : (
@@ -95,6 +114,7 @@ function App({ demoAuth = false }: { demoAuth?: boolean }) {
           <a href="#docs">Docs</a>
         </nav>
         <div className="top-actions">
+          <span className="system-status" aria-label="System status"><span /> Live</span>
           {demoAuth ? (
             <span className="auth-pill"><KeyRound size={14} /> Demo auth</span>
           ) : (
@@ -170,6 +190,11 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
           <span><Zap size={15} /> Instant webhooks</span>
           <span><Sparkles size={15} /> AI powered webhooks</span>
           <span><ShieldCheck size={15} /> Disposable webhooks</span>
+        </div>
+        <div className="signal-strip" aria-label="Clear operational snapshot">
+          <span><strong>99.97%</strong> delivery</span>
+          <span><strong>84 ms</strong> p50 latency</span>
+          <span><strong>0</strong> critical errors</span>
         </div>
         {demoAuth && (
           <p className="clerk-note">
@@ -294,6 +319,11 @@ function ProductDashboard({
             <Metric icon={<Activity size={18} />} label="24 h requests" value={selectedEndpoint.requests24h.toLocaleString()} />
             <Metric icon={<Gauge size={18} />} label="Success rate" value={`${selectedEndpoint.successRate}%`} />
             <Metric icon={<Zap size={18} />} label="P50 latency" value={`${selectedEndpoint.latencyMs} ms`} />
+          </div>
+          <div className="detail-tabs" aria-label="Request detail views">
+            <button className="active" type="button">Overview</button>
+            <button type="button">Payload</button>
+            <button type="button">AI analysis</button>
           </div>
           <div className="ai-summary">
             <Sparkles size={17} />
