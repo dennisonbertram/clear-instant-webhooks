@@ -6,10 +6,10 @@ describe('Clear website', () => {
   it('renders the marketing promise, emulator, dashboard, and docs', async () => {
     render(<AppShell />);
 
-    expect(await screen.findByRole('heading', { name: /Instant AI webhooks/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /Try a webhook/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /Everything important/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /Speak from the right level/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /Instant, disposable webhooks/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Test your webhook/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Webhook observability/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Quick start/i })).toBeInTheDocument();
   });
 
   it('keeps the app renderable in test containers', () => {

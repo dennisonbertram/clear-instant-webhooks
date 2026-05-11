@@ -177,19 +177,19 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
   return (
     <section className="hero" id="hero">
       <div className="hero-copy">
-        <div className="eyebrow"><Sparkles size={15} /> Instant glue for teams that ship</div>
-        <h1>Instant AI webhooks you can trust in production.</h1>
+        <div className="eyebrow"><Sparkles size={15} /> Disposable AI webhooks</div>
+        <h1>Instant, disposable webhooks powered by AI.</h1>
         <p>
-          Create disposable webhooks, transform noisy payloads with AI, watch every hop, and replay safely from one calm dashboard.
+          Create temporary endpoints, transform payloads with AI, monitor traces, and replay requests.
         </p>
         <div className="hero-actions">
           <a className="primary-button" href="#product">Open Dashboard <ArrowRight size={16} /></a>
           <a className="secondary-button" href="#docs">Read Docs</a>
         </div>
         <div className="trust-row" aria-label="Product promises">
-          <span><Zap size={15} /> Instant webhooks</span>
-          <span><Sparkles size={15} /> AI powered webhooks</span>
-          <span><ShieldCheck size={15} /> Disposable webhooks</span>
+          <span><Zap size={15} /> Instant endpoints</span>
+          <span><Sparkles size={15} /> AI transformations</span>
+          <span><ShieldCheck size={15} /> Auto-expiring routes</span>
         </div>
         <div className="signal-strip" aria-label="Clear operational snapshot">
           <span><strong>99.97%</strong> delivery</span>
@@ -206,7 +206,7 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
         <div className="panel-header">
           <div>
             <span className="panel-kicker">Live emulator</span>
-            <h2 id="emulator-title">Try a webhook in 10 seconds</h2>
+            <h2 id="emulator-title">Test your webhook</h2>
           </div>
           <span className="status-chip healthy">Ready</span>
         </div>
@@ -230,8 +230,8 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
             </>
           ) : (
             <>
-              <div className="result-line muted"><TerminalSquare size={16} /> Waiting for a test event</div>
-              <p>Send the example payload to see trace status, AI output, latency, and replay details.</p>
+              <div className="result-line muted"><TerminalSquare size={16} /> Waiting for event...</div>
+              <p>Send a payload to view traces, AI output, latency, and replay options.</p>
             </>
           )}
         </div>
@@ -265,8 +265,8 @@ function ProductDashboard({
     <section className="dashboard-section" id="product">
       <div className="section-heading">
         <span className="panel-kicker">Dashboard</span>
-        <h2>Everything important, nothing loud.</h2>
-        <p>See health, traffic, AI transformations, retries, and raw observability without losing the thread.</p>
+        <h2>Webhook observability</h2>
+        <p>Monitor health, traffic, AI transformations, and retries in one place.</p>
       </div>
       <div className="dashboard-grid">
         <aside className="sidebar-panel" aria-label="Webhook endpoints">
@@ -323,7 +323,7 @@ function ProductDashboard({
           <div className="detail-tabs" aria-label="Request detail views">
             <button className="active" type="button">Overview</button>
             <button type="button">Payload</button>
-            <button type="button">AI analysis</button>
+            <button type="button">AI output</button>
           </div>
           <div className="ai-summary">
             <Sparkles size={17} />
@@ -352,7 +352,7 @@ function ProductDashboard({
           <div className="panel-header">
             <div>
               <span className="panel-kicker">Delivery logs</span>
-              <h3 id="logs-title">Live activity</h3>
+              <h3 id="logs-title">Live traffic</h3>
             </div>
             <select aria-label="Filter logs" value={filter} onChange={(event) => onFilter(event.target.value)}>
               <option value="all">All logs</option>
@@ -380,7 +380,7 @@ function ProductDashboard({
               <div className="empty-state large">
                 <CheckCircle2 size={18} />
                 <strong>No matching deliveries</strong>
-                <p>There are no {filter} logs right now. Clear keeps this view quiet until something needs attention.</p>
+                <p>No {filter} deliveries found.</p>
               </div>
             )}
           </div>
@@ -389,7 +389,7 @@ function ProductDashboard({
           <div className="panel-header">
             <div>
               <span className="panel-kicker">Observability</span>
-              <h3 id="observability-title">Trace stream</h3>
+              <h3 id="observability-title">Traces</h3>
             </div>
             <Bell size={17} aria-hidden="true" />
           </div>
@@ -424,8 +424,8 @@ function Documentation() {
     <section className="docs-section" id="docs">
       <div className="section-heading">
         <span className="panel-kicker">Documentation</span>
-        <h2>Speak from the right level.</h2>
-        <p>Start with the job to be done, then reveal the exact command, trace, and controls when they matter.</p>
+        <h2>Quick start</h2>
+        <p>Create endpoints, configure AI transformations, and monitor traces.</p>
       </div>
       <div className="docs-grid">
         {docs.map((doc) => (
@@ -439,8 +439,8 @@ function Documentation() {
       </div>
       <div className="final-band">
         <div>
-          <span className="panel-kicker">Operational confidence</span>
-          <h2>Replay safely. Pause quickly. Understand instantly.</h2>
+          <span className="panel-kicker">Endpoint controls</span>
+          <h2>Manage and replay webhooks.</h2>
         </div>
         <div className="final-actions">
           <button className="secondary-button" type="button" onClick={() => recordEvent('endpoint.pause.requested', 'Pause endpoint flow opened.')}>
