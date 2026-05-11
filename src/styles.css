@@ -783,9 +783,23 @@ pre code,
 }
 
 .trace-row {
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr);
   padding: 11px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.trace-row > div {
+  min-width: 0;
+}
+
+.trace-row strong,
+.trace-row p {
+  overflow-wrap: anywhere;
+}
+
+.trace-row small {
+  grid-column: 2;
+  justify-self: start;
 }
 
 .trace-row:last-child {
