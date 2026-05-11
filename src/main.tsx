@@ -29,8 +29,7 @@ import { runWebhookEmulator, type EmulatorResult } from './lib/emulator';
 import { readEvents, recordEvent, type TelemetryEvent } from './lib/observability';
 import './styles.css';
 
-const clerkKey = (import.meta.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ??
-  import.meta.env.VITE_CLERK_PUBLISHABLE_KEY) as string | undefined;
+const clerkKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY as string | undefined;
 
 export function formatTraceTime(timestamp: string) {
   const parsed = new Date(timestamp);
@@ -174,7 +173,7 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
         </div>
         {demoAuth && (
           <p className="clerk-note">
-            Clerk is configured. Add <code>NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY</code> in Railway to enable hosted sign-in.
+            Clerk is configured. Add <code>VITE_CLERK_PUBLISHABLE_KEY</code> in Railway to enable hosted sign-in.
           </p>
         )}
       </div>

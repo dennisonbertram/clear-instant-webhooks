@@ -16,11 +16,11 @@ Clear is a polished SaaS dashboard concept for instant AI-powered disposable web
 Set this environment variable locally and in Railway to enable Clerk:
 
 ```bash
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_KEY_HERE
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_KEY_HERE
 CLERK_SECRET_KEY=sk_test_YOUR_SECRET_KEY_HERE
 ```
 
-The client also accepts `VITE_CLERK_PUBLISHABLE_KEY` for Vite-native environments. Without a publishable key, the app remains usable in demo mode and shows a visible configuration note.
+Clear uses the Vite convention for client-exposed environment variables: `VITE_CLERK_PUBLISHABLE_KEY`. Without a publishable key, the app remains usable in demo mode and shows a visible configuration note.
 
 ## Development
 
