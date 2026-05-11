@@ -53,13 +53,13 @@ export const endpoints: WebhookEndpoint[] = [
   },
   {
     id: 'sandbox-demo',
-    name: 'Disposable sandbox',
-    route: '/hooks/temp-4h2x',
+    name: 'Anything sandbox',
+    route: '/hooks/anything',
     status: 'healthy',
     requests24h: 86,
     successRate: 100,
     latencyMs: 42,
-    aiSummary: 'Temporary QA webhook. Auto-expires after the testing session.',
+    aiSummary: 'Fast test endpoint for product, ops, QA, and support workflows.',
   },
 ];
 
@@ -86,7 +86,7 @@ export const logs: DeliveryLog[] = [
   },
   {
     id: 'evt_91c',
-    endpoint: 'Disposable sandbox',
+    endpoint: 'Anything sandbox',
     status: 'delivered',
     method: 'POST',
     source: 'local.emulator',
@@ -130,8 +130,8 @@ export const observableEvents: ObservableEvent[] = [
 export const docs = [
   {
     title: 'Create an endpoint',
-    body: 'Name your webhook, select disposable or persistent mode, and copy the URL.',
-    code: 'curl -X POST https://clear.run/hooks/temp-4h2x \\\n  -H "content-type: application/json" \\\n  -d \'{"event":"demo.created","user":"ada"}\'',
+    body: 'Name your webhook, choose a workflow, and copy the URL.',
+    code: 'curl -X POST https://clear.run/hooks/anything \\\n  -H "content-type: application/json" \\\n  -d \'{"event":"demo.created","user":"ada"}\'',
   },
   {
     title: 'Add AI transformation',

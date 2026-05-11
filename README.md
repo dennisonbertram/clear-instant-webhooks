@@ -1,10 +1,10 @@
 # Clear
 
-Clear is a polished SaaS dashboard concept for instant AI-powered disposable webhooks.
+Clear is a polished SaaS dashboard concept for instant, production-grade AI-powered webhooks.
 
 ## What It Shows
 
-- A first-screen marketing page for “instant webhooks,” “AI powered webhooks,” and “disposable webhooks.”
+- A first-screen marketing page for “instant webhooks,” “AI powered webhooks,” and “production-grade webhooks.”
 - A live webhook emulator that produces trace IDs, summaries, latency, and replay URLs.
 - A focused dashboard with endpoint health, traffic, AI summaries, delivery logs, and observability traces.
 - Documentation that starts from user jobs and reveals exact commands when useful.

@@ -6,7 +6,7 @@ describe('Clear website', () => {
   it('renders the marketing promise, emulator, dashboard, and docs', async () => {
     render(<AppShell />);
 
-    expect(await screen.findByRole('heading', { name: /Instant, disposable webhooks/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /Instant webhooks for any workflow/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Test your webhook/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Webhook observability/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Quick start/i })).toBeInTheDocument();

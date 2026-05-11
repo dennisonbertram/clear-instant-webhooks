@@ -1,7 +1,7 @@
 {
   "name": "instant-glue-dashboard",
   "version": "1.0.0",
-  "description": "Clear dashboard for instant AI-powered disposable webhooks.",
+  "description": "Clear dashboard for instant production-grade AI-powered webhooks.",
   "type": "module",
   "private": true,
   "engines": {

@@ -177,7 +177,7 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
   const sendDemo = () => {
     setResult(
       runWebhookEmulator({
-        endpoint: 'https://clear.run/hooks/temp-4h2x',
+        endpoint: 'https://clear.run/hooks/anything',
         event: eventName,
         body: payload,
       }),
@@ -187,10 +187,10 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
   return (
     <section className="hero" id="hero">
       <div className="hero-copy">
-        <div className="eyebrow"><Sparkles size={15} /> Disposable AI webhooks</div>
-        <h1>Instant, disposable webhooks powered by AI.</h1>
+        <div className="eyebrow"><Sparkles size={15} /> Production-grade webhooks for anything</div>
+        <h1>Instant webhooks for any workflow.</h1>
         <p>
-          Create temporary endpoints, transform payloads with AI, monitor traces, and replay requests.
+          Create endpoints fast, transform payloads with AI, monitor traces, and replay requests in production.
         </p>
         <div className="hero-actions">
           <a className="primary-button" href="#product">Open Dashboard <ArrowRight size={16} /></a>
@@ -199,7 +199,7 @@ function Hero({ demoAuth }: { demoAuth: boolean }) {
         <div className="trust-row" aria-label="Product promises">
           <span><Zap size={15} /> Instant endpoints</span>
           <span><Sparkles size={15} /> AI transformations</span>
-          <span><ShieldCheck size={15} /> Auto-expiring routes</span>
+          <span><ShieldCheck size={15} /> Production-grade</span>
         </div>
         <div className="signal-strip" aria-label="Clear operational snapshot">
           <span><strong>99.97%</strong> delivery</span>
