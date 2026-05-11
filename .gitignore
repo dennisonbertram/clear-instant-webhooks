@@ -1,6 +1,7 @@
 node_modules
 dist
 artifacts
+.agent-browser-shots
 .env
 .env.*
 !.env.example
